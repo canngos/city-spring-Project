@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "city")
+@RequestMapping(path = "/city")
 public class CityController {
 
     private final CityService cityService;
@@ -14,12 +14,12 @@ public class CityController {
         this.cityService = cityService;
     }
 
-    @GetMapping(value = "allCities")
+    @GetMapping(value = "/allCities")
     public List<City> getCities(){
         return cityService.getCities();
     }
 
-    @PostMapping(value = "insert")
+    @PostMapping(value = "/insert")
     public void insertNewCity(@RequestBody City city){
         cityService.addNewCity(city);
     }
