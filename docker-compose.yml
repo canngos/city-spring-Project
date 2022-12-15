@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  API:
+    image: 'city-service:latest'
+    build: ./
+    container_name: city-service
+    ports:
+      - '4567:4567'
+    depends_on:
+      - postgresqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb:5432/city
+      - SPRING_DATASOURCE_USERNAME=canngos
+      - SPRING_DATASOURCE_PASSWORD=1q2w3e1q2w3e
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+      - SERVER_PORT=4567
+
+  postgresqldb:
+    image: 'postgres:latest'
+    container_name: city-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=canngos
+      - POSTGRES_PASSWORD=1q2w3e1q2w3e
+      - POSTGRES_DB=city

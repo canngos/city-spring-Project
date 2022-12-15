@@ -3,6 +3,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/city
     username: canngos
     password: 1q2w3e1q2w3e
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
