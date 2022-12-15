@@ -5,12 +5,10 @@ spring:
     password: 1q2w3e1q2w3e
 
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: update
       dialect: org.hibernate.dialect.PostgreSQLDialect
       format_sql: true
 
 server:
-  error:
-    include-message: always
+  port: 4567
