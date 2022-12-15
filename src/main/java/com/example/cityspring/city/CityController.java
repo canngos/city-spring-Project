@@ -1,8 +1,7 @@
 package com.example.cityspring.city;
 
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/city")
@@ -15,13 +14,12 @@ public class CityController {
     }
 
     @GetMapping(value = "/allCities")
-    public List<City> getCities(){
+    public List<City> getCities() {
         return cityService.getCities();
     }
 
     @PostMapping(value = "/insert")
-    public void insertNewCity(@RequestBody City city){
+    public void insertNewCity(@RequestBody City city) {
         cityService.addNewCity(city);
     }
-
 }
